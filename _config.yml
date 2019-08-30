@@ -1,9 +1,9 @@
-title: Moving # The title of the blog
-author: Your Name # Your name 
-email: your-email@domain.com # your email shown in the footer
-url: http://huangyz.name/moving/ # this is your site's root address.
+title: Egbert Castro # The title of the blog
+author: Egbert Castro # Your name 
+email: egbert.castro@yale.edu # your email shown in the footer
+url: http://egbertcastro.com/ # this is your site's root address.
 description: > # this means to ignore newlines until "show_excerpts:"
-  A clean and minimalist theme for Jekyll.
+  Just a blog about my experience at the interface of biology and machine learning.
 favicon: "./favicon.ico" # set the favicon of the site 
 
 show_excerpts: false # set to true to show excerpts on the homepage
@@ -11,7 +11,7 @@ show_excerpts: false # set to true to show excerpts on the homepage
 # Moving date format
 # refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this
 moving:
-  avatar_url: "https://i.loli.net/2019/08/26/JzCLhDWPEybZr2T.jpg" # avatar in about page
+  avatar_url: "assets/about/me.png" # avatar in about page
   about_you: a short description about you. # short description about you in about page
   date_format: "%b %d" # date format of posts in home page
   back_to: "Home" # In the post page, you have a back button above the title, you can custom the text by yourself.
@@ -19,16 +19,16 @@ moving:
   # generate social links in about page.
   social_links:
     # twitter: 
-    github:  huangyz0918
-    rss: RSS
-    # dribbble: 
-    facebook: huangyz0918
-    # flickr:   
-    # instagram: 
-    linkedin: yizheng-huang
-    # pinterest: 
-    # youtube: 
-    # youtube_channel: 
+    github:  ec1340
+    # rss: RSS
+    # # dribbble: 
+    # facebook: huangyz0918
+    # # flickr:   
+    # # instagram: 
+    # linkedin: yizheng-huang
+    # # pinterest: 
+    # # youtube: 
+    # # youtube_channel: 
     # youtube_channel_name: 
     # telegram: 
     # googleplus: 
@@ -42,8 +42,8 @@ moving:
     #   instance: 
 
 # Build settings
-theme: moving # note, please use huangyz0918/moving if you want to publish to Github Pages.
-
+# theme: moving # note, please use huangyz0918/moving if you want to publish to Github Pages.
+remote_theme: huangyz0918/moving
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
