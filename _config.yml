@@ -1,7 +1,7 @@
 title: Egbert Castro # The title of the blog
 author: Egbert Castro # Your name 
 email: egbert.castro@yale.edu # your email shown in the footer
-url: http://egbertcastro.com/ # this is your site's root address.
+url: https://ec1340.github.io # this is your site's root address.
 description: > # this means to ignore newlines until "show_excerpts:"
   Just a blog about my experience at the interface of biology and machine learning.
 favicon: "./favicon.ico" # set the favicon of the site 
