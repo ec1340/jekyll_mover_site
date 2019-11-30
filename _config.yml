@@ -6,6 +6,7 @@ description: > # this means to ignore newlines until "show_excerpts:"
   Just a blog about my experience at the interface of biology and machine learning.
 favicon: "./favicon.ico" # set the favicon of the site 
 
+google_analytics: UA-102935948-1
 show_excerpts: false # set to true to show excerpts on the homepage
   
 # Moving date format
