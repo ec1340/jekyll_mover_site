@@ -9,6 +9,7 @@ I'm currently a PhD student studying Computational Biology and Bioinformatics at
 ### What's New
 
 - (06/19) I've joined the [Krishnaswamy Lab](https://www.krishnaswamylab.org/) at Yale 
+- (07/20) Presented my last [work](https://grlplus.github.io/papers/43.pdf) at the GRL+ workshop at ICML 2020
 
 
 <br/>

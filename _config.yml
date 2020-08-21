@@ -19,7 +19,7 @@ moving:
 
   # generate social links in about page.
   social_links:
-    twitter: __egbert__
+    twitter: egbert_castro
     github:  ec1340
     # rss: RSS
     # # dribbble: 
@@ -27,6 +27,7 @@ moving:
     # # flickr:   
     # # instagram: 
     linkedin: castroegbert
+    GoogleScholar: igJtvLoAAAAJ
     # # pinterest: 
     # # youtube: 
     # # youtube_channel: 
@@ -48,3 +49,13 @@ remote_theme: huangyz0918/moving
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+
+gem: ['jekyll/scholar']
+
+
+
+scholar:
+  style: apa
+  bibliography: ref.bib
+  replace_strings: true
+  query: "@*"

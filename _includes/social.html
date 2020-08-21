@@ -1,12 +1,13 @@
 {%- assign social = site.moving.social_links -%}
 
 <ul class="social-media-list">
-  {%- if social.dribbble -%}
+  {%- if social.GoogleScholar -%}
   <li>
     <a
       class="black-link"
-      href="https://dribbble.com/{{ social.dribbble | cgi_escape | escape }}"
-      >[Dribbble]</a
+      href="https://scholar.google.com/citations?user={{social.GoogleScholar | cgi_escape | escape}}&hl=en&oi=ao"
+  
+      >[Google Scholar]</a
     >
   </li>
   {%- endif -%} {%- if social.facebook -%}
