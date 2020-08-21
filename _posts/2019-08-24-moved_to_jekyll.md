@@ -3,6 +3,7 @@ layout: post
 title: "Moved to Jekyll"
 categories: misc
 author: Egbert Castro
+
 ---
 
 Finally moved to a Jekyll site!

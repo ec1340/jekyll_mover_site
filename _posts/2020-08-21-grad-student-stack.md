@@ -3,6 +3,11 @@ layout: post
 title: "Graduate Student Stack"
 categories: misc
 author: Egbert Castro
+sitemap:
+  lastmod: 2020-08-21
+  priority: 0.7
+  changefreq: 'monthly'
+  exclude: 'no'
 ---
 
 Since the start of grad school, I've realized that success depends heavily on time is used. With the flexibility granted in grad school and the many responsibilities you're likely to take on, it's easy to slip into time-sinks and misguided priorities. To help combat this, I made this list for myself to keep track of the various tools available that can help me be as productive and time-efficient as possible. 
