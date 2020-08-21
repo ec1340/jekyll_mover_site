@@ -68,14 +68,14 @@ This involves things like your work schedule, gym schedule, healthy eating habit
 
 \
 <img src="notion_logo.png" width="30%"  style="border:3px solid black">
-## Notion (Desktop App)
+### Notion (Desktop App)
 - What: All-in-one knowledge management system
 - Why: It's incredibly flexible and has great integrations with Slack and GDrive. It also has a nice user interface
 
 
 \
 <img src="papers_logo.png" width="20%"  style="border:3px solid black">
-## Papers (Desktop App)
+### Papers (Desktop App)
 - What: Reference manager
 - Why: It helps me organize the million article pdfs I've accumulated. I've found it to be easy to label and organize topics into collections. It can also sync across devices.
 
