@@ -8,6 +8,6 @@ group :jekyll_plugins do
     gem "jekyll-feed"
     gem 'jekyll-deploy'
     gem 'jekyll-sitemap'
-    gem 'jekyll-scholar'
+    # gem 'jekyll-scholar'
  end
  

@@ -50,12 +50,12 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
-gem: ['jekyll/scholar']
+# gem: ['jekyll/scholar']
 
 
 
-scholar:
-  style: apa
-  bibliography: ref.bib
-  replace_strings: true
-  query: "@*"
+# scholar:
+#   style: apa
+#   bibliography: ref.bib
+#   replace_strings: true
+#   query: "@*"
