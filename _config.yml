@@ -49,7 +49,6 @@ remote_theme: huangyz0918/moving
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-  - jekyll-seo-tag
 
 # gem: ['jekyll/scholar']
 
