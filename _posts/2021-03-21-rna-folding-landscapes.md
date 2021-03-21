@@ -13,6 +13,13 @@ sitemap:
 \
 Back in December of 2020 I presented my [paper](https://arxiv.org/abs/2006.06885) on recreating folding landscapes of RNA using a combination of graph signal processing and deep learning. Here I would like to go through the idea behind that paper and explain our approach to the problem we sought out to address.
 
+
+
+<figure>
+  <img src="rna_path2.gif" alt="rna folding trajectory" style="width:100%">
+</figure>
+
+
 ## RNA: the stars of our generation
 
 \
@@ -59,7 +66,7 @@ Well we can get a broader view of an RNA's structure by looking at it's folding 
 But how do we generate a folding landscape? Well we need two things
 
 1. A distance metric between folds that compares meaningful structural information of two structures. 
-2. A way to enforce that smoothness with respect to energy in the coordinates of each structure. 
+2. A way to enforce that smoothness with respect to stability in the coordinates of each structure. 
 
 
 To acheive this we combine strengths from graph scattering transforms and autoencoders.
@@ -120,8 +127,3 @@ In our paper, we find that scattering coefficients, passed through a bottlneck a
 The end result of our approach is a model which, once trained on a set of RNA graphs and their stabilities, can encode each graph into a low dimensional representation that possesses information about its structure and stability in its coordinates. One of the strengths of this approach is that we can also interpolate as well as conduct nearest neighbor searches for potential folding intermediates.  This is useful when exploring the enormous tructural space of an RNA sequence as the number of structures grows exponentially with sequence (N<sup>1.8</sup>)
 
 
-
-<figure>
-  <img src="rna_path2.gif" alt="scattering transform" style="width:100%">
-  <figcaption>Geometric Scattering Transform from Gao et al. 2018. Graph diffusion wavelets were used </figcaption>
-</figure>
