@@ -94,14 +94,14 @@ In our method we use alternative approach to producing a graph representation. W
 
 <figure>
   <img src="scat_transform.png" alt="scattering transform" style="width:100%">
-  <figcaption>Geometric Scattering Transform from Gao et al. 2018. Graph diffusion wavelets were used </figcaption>
+  <figcaption>Geometric Scattering Transform from Gao et al. 2018.</figcaption>
 </figure>
 
 \
 We tested these approaches and found that graph scattering transforms, as a likely consequence of the way it's filter bank is designed, is best able to capture the structural information we are interested in. The multi-scale nature of diffusion wavelets, as parameterized by number of steps, is able encode the hierarchical nature of RNA secondary structure. 
 
 \
-Using the scattering coeffients of each graph for comparisons, we can now begin to generate potential x and y coordinates for the folding landscape. Since we have now converted the discrete graphs to a continous vector represenation, we can use the euclidean distance between the scattering coefficents of two RNA structure graphs as a distance. 
+Using the scattering coeffients of each graph for comparisons, we can now begin to generate potential x and y coordinates for the folding landscape. Since we have now converted the discrete graphs to a continous vector representation, we can use the euclidean distance between the scattering coefficents of two RNA structure graphs as a distance for the folding landscape. 
 
 \
 But as we show in the paper, these graph representations lack the level of smoothness with respect to stability we are aiming for. To get there, we leverage the representational power of deep learning.
@@ -116,10 +116,10 @@ In addition, graph scattering transforms produce a high-dimensional set of coeff
 We take our RNA graphs, now represented as scattering coefficients, as pass them through an autoencoder trained with both a reconstruction task as well as a stability prediction task. We also include a bottleneck to lower the dimensionality of our representations.  We observe that training an autoencoder to predict some property from it's latent space representation induces a smoothness with respect to that property while still retaining the ability to interpolate between datapoints. 
 
 \
-We describe smoothness both quantitively and qualitatively in our paper. For a quantitative measure of how smooth a latent space is, we use the graph laplacian operator formed using the KNN graph from the latent representations of our datapoints. The quadratic form of this operator and some signal, the signal here being stability, effectively calculates the squared difference of stabilities between a points and it's K nearest neighbors. 
+We describe smoothness both quantitively and qualitatively in our paper. For a quantitative measure of how smooth a latent space is, we use the graph laplacian operator formed using the KNN graph from the latent representations of our datapoints. The quadratic form of this operator and some signal, the signal here being stability, effectively calculates the squared difference of stabilities between a point and it's K nearest neighbors. 
 
 \
-In our paper, we find that scattering coefficients, passed through a bottlneck autoencoder, provide the best results when forming a latent space that is smooth with respect to graph structure and stability. This is likely due to the ability of graph scattering transforms to extract multi-scale information from the RNA graphs while the commonly-used GCN layer suffers from a over-smoothing problem with increasing depth.
+We find that scattering coefficients, passed through a bottlneck autoencoder, provide the best results when forming a latent space that is smooth with respect to graph structure and stability. This is likely due to the ability of graph scattering transforms to extract multi-scale information from the RNA graphs while the commonly-used GCN layer suffers from a over-smoothing problem with increasing depth.
 
 
 ## From Data to Folding Landscape
