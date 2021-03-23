@@ -23,13 +23,13 @@ Back in December of 2020 I presented my [paper](https://arxiv.org/abs/2006.06885
 ## RNA: the stars of our generation
 
 \
-Before we get into the method itself, its good to quickly review some basic biology first. Within the body, there are many biomolecules, for example proteins and RNA, which are themselves involved in various processes. While proteins get most of the attention when it comes to studying who the major players are in a biological process, RNA has been getting it's time in the spotlight recently. 
+While proteins get most of the attention when it comes to studying who the major players are in a biological process, RNA has been getting it's time in the spotlight recently. Just in the last few years, RNA has underscored it's importance through its role in the [CRISPR machinery](https://www.nobelprize.org/prizes/chemistry/2020/press-release/) which allows for the editing of genomes as well as it's utility as a means for quickly developing [vaccines](https://www.statnews.com/2020/11/10/the-story-of-mrna-how-a-once-dismissed-idea-became-a-leading-technology-in-the-covid-vaccine-race/). 
 
-A type of RNA that you're likely familiar with is messenger RNA (mRNA) because of its role in the transfer of information between DNA and the end product protein. The famed "central dogma of biology" in other words. But interestingly RNA is involved in so much more. This is no better exemplified by the fact that such a small amount of the genome codes for proteins ([~1%](https://www.genome.gov/27551473/genome-advance-of-the-month-encode-deciphering-function-in-the-human-genome#:~:text=Scientists%20have%20been%20able%20to,functional%20parts%20of%20the%20genome)). A lot of these non-coding RNAs (ncRNAs) carry out functions themselves like detecting signals (riboswitches) or targeting things in a cell that should be broken down (siRNA). 
+A type of RNA that you're likely familiar with is [messenger RNA](https://www.genome.gov/genetics-glossary/messenger-rna) (mRNA) because of its role in the transfer of information between DNA and the end product protein. The famed "[central dogma of biology](https://en.wikipedia.org/wiki/Central_dogma_of_molecular_biology)" in other words. But as pervasive as that perspective of RNA is, it only scratches the surface of what RNA can do. This is no better exemplified by the fact that such a small amount of the genome codes for proteins ([~1%](https://www.genome.gov/27551473/genome-advance-of-the-month-encode-deciphering-function-in-the-human-genome#:~:text=Scientists%20have%20been%20able%20to,functional%20parts%20of%20the%20genome)). A lot of these [non-coding RNA](https://www.frontiersin.org/articles/10.3389/fgene.2015.00002/full) (ncRNAs) carry out functions themselves like detecting signals ([riboswitches](https://www.nature.com/scitable/topicpage/riboswitches-a-common-rna-regulatory-element-14262702/)) or targeting things in a cell that should be broken down ([siRNA](https://en.wikipedia.org/wiki/Small_interfering_RNA)). 
 
-Importantly, RNA are similar to proteins in that they must fold onto itself into a certain shape to perform their function. A key driver in how an RNA folds is unsurprisingly it's nucleotide sequence and so it's sometimes possible to predict how an RNA may fold using that sequence information. How you ask? Well the principles of thermodynamics tells us that entities are most stable (and thus relatively unchanging) when they have settled in some potential energy minimum. Following that reasoning, an RNA molecule is likely to be in its most stable fold, assuming no other entity is interacting with it. 
+Importantly, functional RNA are similar to proteins in that they must fold onto itself into a certain shape to carry out their role. A key driver in how an RNA folds is it's nucleotide sequence and so it's sometimes possible to predict how an RNA may fold using that sequence information by applying the core idea of the [the thermodynamic hypothesis](https://en.wikipedia.org/wiki/Anfinsen%27s_dogma).
 
-Before we go further, we should clear up our definition of a fold in this context. Because RNA are relatively small compared to their protein counterparts, we can simplify our description of it's fold from the 3D case to the 2D case. This 2D description of an RNA's fold is called it's secondary structure and is comprised of the backbone of the RNA chain and bonds between non-sequential positions. For the remainder of this blog post, I'll use secondary structure and fold interchangably.
+Before we go further, we should clear up our definition of a fold in this context. Because RNA are relatively small compared to their protein counterparts, we can simplify our description of it's fold from the 3D case to the 2D case without losing too much information. This 2D description of an RNA's fold is called it's secondary structure and is comprised of the backbone of the RNA chain and bonds between non-sequential positions. For the remainder of this blog post, I'll use secondary structure and fold interchangably.
 
 <figure>
   <img src="rna_str_23D.png" alt="RNA secondary and tertiary structure" style="width:80%">
@@ -40,15 +40,21 @@ Before we go further, we should clear up our definition of a fold in this contex
 ## Biomolecules are Dynamic 
 
 \
-Finding the most stable RNA secondary structure, which we will refer to as the minimum free energy (MFE) structure, can be viewed as a mathematical pairing problem. There are several tools (RNAfold) which is able to solve an underlying problem using approximations of the stabilizing contributions of each bond type (G to C vs U to A). From the output MFE structure, we can start of make inferences about the RNA's behavior.
+Finding the most stable RNA secondary structure, which we will refer to as the minimum free energy (MFE) structure, can be viewed as a mathematical pairing problem. There are several tools, such as [Vienna RNAfold](http://rna.tbi.univie.ac.at/cgi-bin/RNAWebSuite/RNAfold.cgi), which are able to solve an underlying problem using thermodynamic approximations of the stabilizing contributions of each bond type (G to C vs U to A). Using the output MFE structure, we can start of make inferences about the RNA's behavior.
 
-But wait! Biomolecules are not static objects. They move **a lot**
-
-\
-Because of this, we argue that a focus on MFE structure introduces a strong bias to downstream analysis and can result in an inaccurate, or at least very incomplete, view of the RNA of interest. For this reason, a more hollistic view of the folds a given RNA sequence can take is required. 
+But wait! Biomolecules are not static objects. [RNA are no exception](https://www.sciencedirect.com/science/article/pii/S1367593108001749?via%3Dihub). 
 
 \
 Biomolecules are not static and are in fact under constant flux due to a crowded intracellular environment. Indeed, if you simulate the movements of a small protein in just an aqueous bath you can see major conformational changes over the span of nanoseconds. Furthermore, many ncRNAs, such as riboswitches, are known to be move between multiple conformations and thus a single structure would not be representative of that RNA sequence. 
+
+\ 
+Even if we ignore this argument, there are also the thermodynamic approximations to address. Software like Vienna RNAfold simplify the folding problem by using [approximated energy parameters](https://www.sciencedirect.com/science/article/pii/S0022283699927006?via%3Dihub) to determine the stability conferred by each bond a potential structure. This can be problematic in that the MFE solution is quite [sensitive](https://pubmed.ncbi.nlm.nih.gov/15673712/) to these value of these parameters and the implicit focus on helices (stretches of consecutive bonds) in a structure leaves room for many potential [solutions](https://www.tandfonline.com/doi/full/10.4161/rna.28718).
+
+
+\
+Because of these reasons, we argue that a focus on MFE structure introduces a strong bias to downstream analysis and can result in an inaccurate, or at least very incomplete, view of the RNA of interest.  For this reason, a more hollistic view of the folds a given RNA sequence can take is required. 
+
+
 
 \
 So what else can we do?
